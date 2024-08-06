@@ -4,7 +4,7 @@
       <el-col :span="6"><div class="grid-content ep-bg-purple" /></el-col>
       <el-col :span="6"><div class="grid-content ep-bg-purple" /></el-col>
       <el-col :span="6"><div class="grid-content ep-bg-purple" /></el-col>
-      <span> waferInfo</span>
+      <span> vt_display</span>
     </el-row>
   </template>
   
