@@ -10,9 +10,9 @@
              <el-menu-item-group>
               <template #title>Group 1</template>
               
-              <el-menu-item index="1-1" @click="handleItemClick('wafer_map')">Option 1</el-menu-item>
+              <el-menu-item index="1-1" @click="handleItemClick('wafer_map')">Wafer_map</el-menu-item>
 
-              <el-menu-item index="1-2" @click="handleItemClick('address_convert')">Option 2</el-menu-item>
+              <el-menu-item index="1-2" @click="handleItemClick('address_convert')">地址转换</el-menu-item>
 
               <el-menu-item index="1-3" @click="handleItemClick('tb_yield')">Option 3</el-menu-item>
 
