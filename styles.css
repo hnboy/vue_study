@@ -1,0 +1,178 @@
+/* 全局样式优化 - Light Mode (默认) */
+:root {
+    --primary-color: #8fb4dc;
+    --bg-color: #F5F5F7;
+    --text-color: #1D1D1F;
+    --border-color: #D2D2D7;
+    --header-bg: #FBFBFD;
+    --hover-color: rgba(0, 122, 255, 0.05);
+    --table-bg: #FFFFFF;
+    --table-alt-bg: #F5F5F7;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --scrollbar-thumb: #BDBDBD;
+    --scrollbar-track: #F5F5F7;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #0A84FF;
+        --bg-color: #1C1C1E;
+        --text-color: #FFFFFF;
+        --border-color: #38383A;
+        --header-bg: #2C2C2E;
+        --hover-color: rgba(10, 132, 255, 0.1);
+        --table-bg: #2C2C2E;
+        --table-alt-bg: #3A3A3C;
+        --shadow-color: rgba(0, 0, 0, 0.3);
+        --scrollbar-thumb: #636366;
+        --scrollbar-track: #2C2C2E;
+    }
+
+    /* 深色模式下的表格样式调整 */
+    .table-container {
+        background: var(--table-bg);
+        box-shadow: 0 1px 3px var(--shadow-color);
+    }
+
+    table {
+        box-shadow: 0 4px 8px var(--shadow-color);
+    }
+
+    th {
+        color: #98989D;
+        background-color: var(--header-bg);
+    }
+
+    td:nth-child(4n+1),
+    td:nth-child(4n+2),
+    td:nth-child(4n+3),
+    td:nth-child(4n+4) {
+        background-color: var(--table-bg);
+    }
+
+    td:nth-child(8n+5),
+    td:nth-child(8n+6),
+    td:nth-child(8n+7),
+    td:nth-child(8n+8) {
+        background-color: var(--table-alt-bg);
+    }
+
+    /* 深色模式下的滚动条样式 */
+    .table-container::-webkit-scrollbar-track {
+        background: var(--scrollbar-track);
+    }
+
+    .table-container::-webkit-scrollbar-thumb {
+        background-color: var(--scrollbar-thumb);
+    }
+
+    .table-container::-webkit-scrollbar-thumb:hover {
+        background-color: #8E8E93;
+    }
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* 表格容器样式 */
+.table-wrapper {
+    margin: 20px auto;
+    max-width: 95%;
+}
+
+.table-container {
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+    background: var(--table-bg);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px var(--shadow-color);
+    padding: 15px;
+    margin-bottom: 30px; /* 增加表格之间的间距 */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--bg-color);
+}
+
+/* 滚动条样式 */
+.table-container::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+    border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius: 4px;
+}
+
+/* 当滚动条悬停时的样式 */
+.table-container::-webkit-scrollbar-thumb:hover {
+    background-color: #8E8E93;
+}
+
+/* 标题居中 */
+h1, h2{
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* 添加表格基础样式 */
+table {
+    width: 100%;
+    min-width: max-content;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 0;
+    border-radius: 8px; /* 圆角 */
+    overflow: hidden; /* 隐藏超出圆角的内容 */
+    box-shadow: 0 4px 8px var(--shadow-color); /* 阴影 */
+}
+
+/* 表格单元格和表头样式 */
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+    font-size: 14px;
+}   
+
+/* 表头样式 */
+th {
+    background-color: var(--header-bg);
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+    color: #86868B;
+}
+
+/* 每4个td交替颜色 */
+td:nth-child(4n+1),
+td:nth-child(4n+2),
+td:nth-child(4n+3),
+td:nth-child(4n+4) {
+    background-color: var(--table-bg);
+}
+
+td:nth-child(8n+5),
+td:nth-child(8n+6),
+td:nth-child(8n+7),
+td:nth-child(8n+8) {
+    background-color: var(--table-alt-bg);
+}
+
+/* 鼠标悬停效果 */
+tr:hover {
+    background-color: var(--hover-color); /* 使用定义的悬停颜色 */
+    cursor: pointer;
+}

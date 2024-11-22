@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOML Data Visualization</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>TOML Data Visualization</h1>
+
+
+{% for section, data in toml_data.items() %}
+<div class="table-wrapper">
+<div class="table-container">
+    <h2>{{ section }}</h2>
+    <table>
+        <tr>
+         <td>Index</td>
+            {% for i in range(data.index|length) %}
+                <th>{{ data.index[i] }}</th>
+            {% endfor %}
+        </tr>
+        <tr>
+        <td>Data</td>
+            {% for i in range(data.index|length) %}
+                <td>{% if i < data.data|length %}0x{{ '%02X' % data.data[i][0] }}{% endif %}</td>
+            {% endfor %}
+        </tr>
+        <td>reference</td>
+        {% for i in range(data.index|length) %}
+            <td>{% if i < data.data|length %}0x{{ '%02X' % data.data[i][1] }}{% endif %}</td>
+        {% endfor %}
+    </tr>
+    </table>
+</div>
+</div>
+{% endfor %}
+
+<script src="script.js"></script>
+</body>
+</html>
+
